@@ -13,32 +13,32 @@ describe('words()', () => {
     expect(words.count('one of each')).toEqual(expectedCounts)
   })
 
-  xit('counts multiple occurrences', () => {
+  it('counts multiple occurrences', () => {
     const expectedCounts = new Map(Object.entries({ one : 1, fish: 4, two: 1, red: 1, blue: 1 }))
     expect(words.count('one fish two fish red fish blue fish')).toEqual(expectedCounts)
   })
 
-  xit('includes punctuation', () => {
+  it('includes punctuation', () => {
     const expectedCounts = new Map(Object.entries({ car: 1, ':': 2, carpet: 1, as: 1, java: 1, 'javascript!!&@$%^&': 1 }))
     expect(words.count('car : carpet as java : javascript!!&@$%^&')).toEqual(expectedCounts)
   })
 
-  xit('includes numbers', () => {
+  it('includes numbers', () => {
     const expectedCounts = new Map(Object.entries({ testing: 2, 1: 1, 2: 1 }))
     expect(words.count('1 2 testing testing')).toEqual(expectedCounts)
   })
 
-  xit('normalizes to lower case', () => {
+  it('normalizes to lower case', () => {
     const expectedCounts = new Map(Object.entries({ go: 3 }))
     expect(words.count('go Go GO')).toEqual(expectedCounts)
   })
 
-  xit('counts properly international characters', () => {
+  it('counts properly international characters', () => {
     const expectedCounts = new Map(Object.entries({ '¡hola!': 1, '¿qué': 1, 'tal?': 1, 'привет!': 1 }))
     expect(words.count('¡Hola! ¿Qué tal? Привет!')).toEqual(expectedCounts)
   })
 
-  xit('counts multiline', () => {
+  it('counts multiline', () => {
     const expectedCounts = new Map(Object.entries({ hello: 1, world: 1 }))
     expect(words.count('hello\nworld')).toEqual(expectedCounts)
   })

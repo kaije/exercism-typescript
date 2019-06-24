@@ -53,12 +53,12 @@ describe('words()', () => {
     expect(words.count('hello  world')).toEqual(expectedCounts)
   })
 
-  xit('does not count leading or trailing whitespace', () => {
+  it('does not count leading or trailing whitespace', () => {
     const expectedCounts = new Map(Object.entries({ introductory: 1, course: 1 }))
     expect(words.count('\t\tIntroductory Course      ')).toEqual(expectedCounts)
   })
 
-  xit('handles properties that exist on Object’s prototype', () => {
+  it('handles properties that exist on Object’s prototype', () => {
     const expectedCounts = new Map(Object.entries({ reserved: 1, words : 1, like : 1,  constructor: 1, and : 1, tostring: 1,  'ok?': 1}))
     expect(words.count('reserved words like constructor and toString ok?')).toEqual(expectedCounts)
   })

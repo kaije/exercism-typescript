@@ -1,3 +1,5 @@
+const GIGASECOND_IN_MILLISECONDS: number = 1e12;
+
 export default class Gigasecond {
   startDate: Date;
 
@@ -6,6 +8,6 @@ export default class Gigasecond {
   }
 
   date(): Date {
-    return new Date(this.startDate.getTime() + 1e12);
+    return new Date(this.startDate.getTime() + GIGASECOND_IN_MILLISECONDS);
   }
 }

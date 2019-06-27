@@ -1,26 +1,20 @@
+interface dnaToRna {
+  [dnaNucleotide: string]: string
+}
+
+let conversions: dnaToRna = {
+  'C': 'G',
+  'G': 'C',
+  'A': 'U',
+  'T': 'A'
+}
+
 class Transcriptor {
      toRna( dnaStrand: string ) {
         return this.convertNucleotide(dnaStrand);
     }
     convertNucleotide( dnaNucleotide: string ): string {
-      let rnaNucleotide = '';
-      switch(dnaNucleotide) {
-        case 'C':
-          rnaNucleotide = 'G';
-          break;
-        case 'G':
-          rnaNucleotide = 'C';
-          break;
-        case 'T':
-          rnaNucleotide = 'A';
-          break;
-        case 'A':
-          rnaNucleotide = 'U';
-          break;
-        default:
-          null;
-      }
-      return rnaNucleotide;
+      return conversions[dnaNucleotide];
     }
 }
 

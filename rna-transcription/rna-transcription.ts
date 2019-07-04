@@ -11,7 +11,9 @@ const conversions: dnaToRna = {
 
 class Transcriptor {
      toRna( dnaStrand: string ) {
-        return this.convertNucleotide(dnaStrand);
+        return dnaStrand.split('').map(
+          (nucleotide: string) => this.convertNucleotide(nucleotide)
+        ).join('');
     }
     convertNucleotide( dnaNucleotide: string ): string {
       return conversions[dnaNucleotide];

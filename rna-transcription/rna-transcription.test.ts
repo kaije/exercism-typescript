@@ -24,7 +24,7 @@ describe('Transcriptor', () => {
         .toEqual('UGCACCAGAAUU')
   })
 
-  xit('correctly handles invalid input', () => {
+  it('correctly handles invalid input', () => {
     expect(() => transcriptor.toRna('U')).toThrowError(
       'Invalid input DNA.'
     )

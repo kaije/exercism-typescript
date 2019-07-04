@@ -16,6 +16,9 @@ class Transcriptor {
         ).join('');
     }
     convertNucleotide( dnaNucleotide: string ): string {
+      if (!conversions[dnaNucleotide]) {
+        throw new Error("Invalid input DNA.");
+      }
       return conversions[dnaNucleotide];
     }
 }

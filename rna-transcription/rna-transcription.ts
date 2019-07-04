@@ -2,11 +2,11 @@ interface dnaToRna {
   [dnaNucleotide: string]: string
 }
 
-let conversions: dnaToRna = {
-  'C': 'G',
-  'G': 'C',
-  'A': 'U',
-  'T': 'A'
+const conversions: dnaToRna = {
+  C: 'G',
+  G: 'C',
+  A: 'U',
+  T: 'A'
 }
 
 class Transcriptor {

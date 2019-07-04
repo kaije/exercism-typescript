@@ -10,17 +10,17 @@ const conversions: dnaToRna = {
 }
 
 class Transcriptor {
-     toRna( dnaStrand: string ) {
-        return dnaStrand.split('').map(
-          (nucleotide: string) => this.convertNucleotide(nucleotide)
-        ).join('');
+  toRna(dnaStrand: string) {
+    return dnaStrand.split('').map(
+      (nucleotide: string) => this.convertNucleotide(nucleotide)
+    ).join('');
+  }
+  convertNucleotide(dnaNucleotide: string): string {
+    if (!conversions[dnaNucleotide]) {
+      throw new Error("Invalid input DNA.");
     }
-    convertNucleotide( dnaNucleotide: string ): string {
-      if (!conversions[dnaNucleotide]) {
-        throw new Error("Invalid input DNA.");
-      }
-      return conversions[dnaNucleotide];
-    }
+    return conversions[dnaNucleotide];
+  }
 }
 
 export default Transcriptor
